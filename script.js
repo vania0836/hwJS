@@ -11,8 +11,8 @@ let convert2 = +num2;
 console.log((convert1+convert2)/2);
 
 //b)
-let a = prompt("Enter a number1");
-let b = prompt("Enter a number2");
+let a = prompt("Enter a number a");
+let b = prompt("Enter a number b");
 //a * x + b = 0
 //x = -b/a
 console.log("x = ", -b/a);
