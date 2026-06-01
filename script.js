@@ -1,22 +1,36 @@
-//--- task 1 ---
-let num = prompt("Enter a number");
-console.log(num**2);
+// Завдання 1
+var text = 'To be, or not to be, that is the question...';
+var i = 0;
+var el = document.getElementById('hamlet-out');
+var author = document.getElementById('hamlet-author');
 
-//---- task 2 ---
-//a)
-let num1 = prompt("Enter a number1");
-let num2 = prompt("Enter a number2");
-let convert1 = +num1;
-let convert2 = +num2;
-console.log((convert1+convert2)/2);
+var interval = setInterval(function () {
+    el.innerText += text[i];
+    i++;
+    if (i >= text.length) {
+        clearInterval(interval);
+        setTimeout(function () {
+            author.innerText = 'William Shakespeare, from «Hamlet»';
+        }, 500);
+    }
+}, 250);
 
-//b)
-let a = prompt("Enter a number a");
-let b = prompt("Enter a number b");
-//a * x + b = 0
-//x = -b/a
-console.log("x = ", -b/a);
 
-//c)
-let salary = prompt("ваши продажи: ");
-console.log(250 + (salary * 0.10));
+// Завдання 2
+function pad(n) {
+    return n < 10 ? '0' + n : '' + n;
+}
+
+function updateCountdown() {
+    var now = new Date();
+    var nextYear = new Date(now.getFullYear() + 1, 0, 1);
+    var diff = nextYear - now;
+
+    document.getElementById('cd-days').innerText  = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-hours').innerText = pad(Math.floor((diff % 86400000) / 3600000));
+    document.getElementById('cd-min').innerText   = pad(Math.floor((diff % 3600000) / 60000));
+    document.getElementById('cd-sec').innerText   = pad(Math.floor((diff % 60000) / 1000));
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
