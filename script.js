@@ -1,36 +1,28 @@
 // Завдання 1
-var text = 'To be, or not to be, that is the question...';
-var i = 0;
-var el = document.getElementById('hamlet-out');
-var author = document.getElementById('hamlet-author');
+var b1 = document.getElementById('b1');
+var b2 = document.getElementById('b2');
+var b3 = document.getElementById('b3');
+var bottom = document.getElementById('bottom');
 
-var interval = setInterval(function () {
-    el.innerText += text[i];
-    i++;
-    if (i >= text.length) {
-        clearInterval(interval);
-        setTimeout(function () {
-            author.innerText = 'William Shakespeare, from «Hamlet»';
-        }, 500);
-    }
-}, 250);
+b1.addEventListener('mouseover', function () {
+    bottom.style.background = '#4cdd1f';
+});
+b2.addEventListener('mouseover', function () {
+    bottom.style.background = '#f5d020';
+});
+b3.addEventListener('mouseover', function () {
+    bottom.style.background = '#e8522a';
+});
+
+b1.addEventListener('mouseout', function () { bottom.style.background = 'gray'; });
+b2.addEventListener('mouseout', function () { bottom.style.background = 'gray'; });
+b3.addEventListener('mouseout', function () { bottom.style.background = 'gray'; });
 
 
 // Завдання 2
-function pad(n) {
-    return n < 10 ? '0' + n : '' + n;
-}
+var box = document.getElementById('box');
 
-function updateCountdown() {
-    var now = new Date();
-    var nextYear = new Date(now.getFullYear() + 1, 0, 1);
-    var diff = nextYear - now;
-
-    document.getElementById('cd-days').innerText  = pad(Math.floor(diff / 86400000));
-    document.getElementById('cd-hours').innerText = pad(Math.floor((diff % 86400000) / 3600000));
-    document.getElementById('cd-min').innerText   = pad(Math.floor((diff % 3600000) / 60000));
-    document.getElementById('cd-sec').innerText   = pad(Math.floor((diff % 60000) / 1000));
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
+document.addEventListener('mousemove', function (e) {
+    box.style.left = e.pageX - box.offsetWidth / 2 + 'px';
+    box.style.top  = e.pageY - box.offsetHeight / 2 + 'px';
+});
