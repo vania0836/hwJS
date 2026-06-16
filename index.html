@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Домашнє завдання 4</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HW6</title>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
- 
-    <h2>Завдання 1</h2>
- 
-    <button id="btnOpen">Відкрити вікно</button>
-    <button id="btnClose">Закрити вікно</button>
- 
-    <hr>
- 
-    <h2>Завдання 2</h2>
- 
-    <p>Мови встановлені в системі:</p>
-    <ul id="languageList"></ul>
- 
-    <script src="script.js"></script>
+
+<!-- TASK 1 -->
+<div class="panel">
+    <p class="counter">Right position: <span id="right-count">0</span></p>
+    <ul id="sortable-list">
+        <li draggable="true" data-value="3">3</li>
+        <li draggable="true" data-value="2">2</li>
+        <li draggable="true" data-value="1">1</li>
+    </ul>
+    <p id="win-msg" class="hidden">win !!!</p>
+</div>
+
+<!-- TASK 2 -->
+<div class="panel">
+    <div class="row">
+        <input type="text" id="palindrome-input" placeholder="Enter text..."/>
+        <button id="check-btn">Check</button>
+    </div>
+    <p id="palindrome-result" class="hidden"></p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
- 
