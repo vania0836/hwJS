@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: white;
+        }
+
+        a {
+            color: black;
+            font-size: 18px;
+        }
+
+        .box {
+            width: 260px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .square {
+            width: 120px;
+            height: 120px;
+            border: 2px solid black;
+            margin: 12px auto;
+            background: white;
+        }
+
+        button {
+            margin: 4px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        input {
+            width: 65px;
+            height: 28px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Завдання 1</a>
+
+    <div class="box">
+        <h2>Завдання 2</h2>
+
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2"></div>
+        <div class="square" id="square3"></div>
+
+        <input type="color" id="color" value="#efdca6">
+        <button id="btn1">square1</button>
+        <button id="btn2">square2</button>
+        <button id="btn3">square3</button>
+    </div>
+
+    <script src="colors.js"></script>
+</body>
+</html>
